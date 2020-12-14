@@ -1,0 +1,88 @@
+ .movieRow {
+     margin-bottom: 30px;
+ }
+
+ .movieRow h2 {
+     margin: 0px 0px 0px 30px;
+ }
+
+ .movieRow--listarea {
+     /* tudo que passar na horizontal, sera cortado */
+     overflow-x: hidden;
+     padding-left: 30px;
+ }
+
+ .movieRow--list {
+     transition: all ease 0.5s;
+ }
+
+ /* foi tirado para arrumar o deslizamento dos filmes, para que nao ficassem mais fora da pagina
+.movieRow--list {
+     width: 99999999999px;
+ } */
+
+ .movieRow--item {
+     /* as imagens fiquem ao lado da outra */
+     display: inline-block;
+     width: 150px;
+     /* muda para 'maozinha' */
+     cursor: pointer;
+ }
+
+ .movieRow--item img {
+     width: 100%;
+     /* diminui proporcionalmente o css para 90% de 150px9(as imgs), mas as imagens continuam com 100%  e não tomam o 150px*/
+     transform: scale(0.9);
+     /* deixa mais suave a transição de crescimento */
+     transition: all ease 0.2s;
+ }
+
+ /* quando passa o mouse a imagem cresce tomando os 150px */
+
+ .movieRow--item img:hover {
+     transform: scale(1);
+ }
+
+ .movieRow--left,
+ .movieRow--right {
+     /* fica flutuando */
+     position: absolute;
+     width: 40px;
+     height: 225px;
+     /* cor preta e 60% da cor */
+     background-color: rgba(0, 0, 0, 0.6);
+     z-index: 99;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     /* como o icone tem um espaço maior que 40 do fontSize, fica com scroll lateral */
+     overflow: hidden;
+     /* indicar area clicavel */
+     cursor: pointer;
+     /* some os icones. Arrumado nos .movieRow:hover .movieRow--left,
+ .movieRow:hover .movieRow--right para aparecer qnd mouse entra na list*/
+     opacity: 0;
+     transition: all ease 0.5s;
+ }
+
+ .movieRow--left {
+     left: 0;
+ }
+
+ .movieRow--right {
+     right: 0;
+ }
+
+ .movieRow:hover .movieRow--left,
+ .movieRow:hover .movieRow--right {
+     opacity: 1;
+ }
+
+ @media (max-width: 760px) {
+
+     .movieRow--left,
+     .movieRow--right {
+         /* anula o 'sumiço' das setas */
+         opacity: 1;
+     }
+ }
